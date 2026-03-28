@@ -730,33 +730,68 @@ figure {
   max-width: 100%;
   overflow: hidden;
 }
-/* NAV BAR */
+/* NAV BAR — clean, centered, responsive */
 .top-nav {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin: 16px auto 32px;
   max-width: 760px;
-  padding: 0 28px;
-  font-size: 14px;
+  margin: 20px auto 40px;
+  padding: 0 20px;
+
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  font-size: 15px;
+  letter-spacing: 0.3px;
 }
 
 .top-nav a {
   text-decoration: none;
   color: var(--link);
+  opacity: 0.85;
 }
 
 .top-nav a:hover {
+  opacity: 1;
   text-decoration: underline;
 }
+
+/* Mobile tightening */
+@media (max-width: 600px) {
+  .top-nav {
+    gap: 16px;
+    font-size: 14px;
+  }
+}
+/* SEARCH — consistent with historiography */
 .search-box {
-  margin-bottom: 16px;
+  max-width: 760px;
+  margin: 24px auto;
+  padding: 0 20px;
 }
 
 #search {
   width: 100%;
-  padding: 8px;
-  font-size: 14px;
+  padding: 12px 14px;
+
+  font-size: 15px;
+  font-family: inherit;
+
+  background: transparent;
+  color: var(--text);
+
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 4px;
+}
+
+#search::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+#search-results {
+  max-width: 760px;
+  margin: 12px auto 0;
+  padding: 0 20px;
 }
 
 #search-results li {
@@ -777,10 +812,20 @@ figure {
     font-size: 2em;
   }
 }
-/* PAGE NAV */
+/* PAGE NAV — properly separated */
 .page-nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
   margin-top: 48px;
-  font-size: 14px;
+  max-width: 760px;
+}
+
+.page-nav .prev {
+  text-align: left;
+}
+
+.page-nav .next {
+  text-align: right;
 }

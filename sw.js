@@ -1,30 +1,14 @@
-const CACHE_NAME = 'archive-v1';
+const CACHE_NAME = 'archive-v3';
 
-// Core shell files that must be cached on install
+// Minimal shell (DO NOT over-expand this)
 const SHELL = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/manifest.json',
-  '/essays/essay-001.html',
-  '/essays/essay-002.html',
-  '/essays/essay-003.html',
-  '/essays/essay-004.html',
-  '/essays/essay-005.html',
-  '/reviews/movie-001.html',
-  '/reviews/movie-002.html',
-  '/notes/historiography.html',
-  '/notes/personal.html',
-  '/posters/index.html',
-  '/ideology/index.html',
-  '/ideology/AjitDoval/index.html',
-  '/ideology/LKY/index.html',
-  '/ideology/savarkar/index.html',
-  '/taste/index.html',
-  '/form/index.html',
+  '/archive/',
+  '/archive/index.html',
+  '/archive/style.css',
+  '/archive/manifest.json'
 ];
 
-// Install: cache the shell
+// INSTALL — cache only core shell
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(SHELL))
@@ -32,7 +16,7 @@ self.addEventListener('install', event => {
   self.skipWaiting();
 });
 
-// Activate: delete old caches
+// ACTIVATE — remove old caches
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
@@ -44,38 +28,46 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
-// Fetch: network first, fall back to cache
-// Images use cache-first (they rarely change and are large)
+// FETCH — correct separation of concerns
 self.addEventListener('fetch', event => {
-  const url = new URL(event.request.url);
+  const req = event.request;
+  const url = new URL(req.url);
 
-  // Only handle same-origin requests
+  // Only same-origin
   if (url.origin !== location.origin) return;
 
-  const isImage = /\.(jpe?g|png|gif|webp|svg)$/i.test(url.pathname);
-
-  if (isImage) {
-    // Cache-first for images
+  // ✅ 1. Navigation requests (CRITICAL FIX)
+  if (req.mode === 'navigate') {
     event.respondWith(
-      caches.match(event.request).then(cached => {
+      fetch(req).catch(() =>
+        caches.match(req).then(res => res || caches.match('/archive/index.html'))
+      )
+    );
+    return;
+  }
+
+  // ✅ 2. Images → cache-first
+  if (req.destination === 'image') {
+    event.respondWith(
+      caches.match(req).then(cached => {
         if (cached) return cached;
-        return fetch(event.request).then(response => {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
-          return response;
+
+        return fetch(req).then(res => {
+          const clone = res.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(req, clone));
+          return res;
         });
       })
     );
-  } else {
-    // Network-first for HTML/CSS (so updates propagate)
-    event.respondWith(
-      fetch(event.request)
-        .then(response => {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
-          return response;
-        })
-        .catch(() => caches.match(event.request))
-    );
+    return;
   }
+
+  // ✅ 3. Everything else → network-first (no history interference)
+  event.respondWith(
+    fetch(req).then(res => {
+      const clone = res.clone();
+      caches.open(CACHE_NAME).then(cache => cache.put(req, clone));
+      return res;
+    }).catch(() => caches.match(req))
+  );
 });

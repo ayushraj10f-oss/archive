@@ -796,13 +796,12 @@ figure {
 }
 
 /* NAV */
-
 .nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 14px;
 
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .nav a {
@@ -838,4 +837,35 @@ figure {
   border-bottom: none;
   padding-bottom: 0;
   margin: 12px 0;
+}
+#theme-toggle {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+
+  font-size: 12px;
+  padding: 5px 9px;
+
+  background: transparent;
+  border: 1px solid currentColor;
+  color: var(--text);
+
+  cursor: pointer;
+  z-index: 1000;
+}
+.top-bar {
+  margin-top: 40px;
+}
+@media (max-width: 700px) {
+  .top-bar {
+    display: block;
+    margin-top: 32px;
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
 }

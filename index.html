@@ -22,6 +22,10 @@
 <div class="page">
 
   <h1>Archive</h1>
+  <div class="search-box">
+  <input type="text" id="search" placeholder="Search archive...">
+</div>
+<ul id="search-results"></ul>
 
   <p class="subtitle">
     Essays, reviews, posters and fragments.
@@ -144,6 +148,32 @@ Historiography Notes Archive
     localStorage.setItem("theme", next);
   };
 </script>
+<script>
+const pages = [
+  { title: "Karmabhumi", url: "/archive/essays/essay-001.html" },
+  { title: "Civilizational Realism", url: "/archive/essays/essay-002.html" },
+  { title: "The Forest and the Knife", url: "/archive/essays/essay-003.html" },
+  { title: "Strategic Blindness", url: "/archive/essays/essay-004.html" },
+  { title: "Jati", url: "/archive/essays/essay-005.html" },
+  { title: "Historiography Notes", url: "/archive/notes/historiography.html" },
+  { title: "Personal Notes", url: "/archive/notes/personal.html" }
+];
 
+const input = document.getElementById("search");
+const results = document.getElementById("search-results");
+
+input.addEventListener("input", () => {
+  const query = input.value.toLowerCase();
+  results.innerHTML = "";
+
+  pages
+    .filter(p => p.title.toLowerCase().includes(query))
+    .forEach(p => {
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="${p.url}">${p.title}</a>`;
+      results.appendChild(li);
+    });
+});
+</script>
 </body>
 </html>

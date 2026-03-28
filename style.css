@@ -730,3 +730,57 @@ figure {
   max-width: 100%;
   overflow: hidden;
 }
+/* NAV BAR */
+.top-nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 16px auto 32px;
+  max-width: 760px;
+  padding: 0 28px;
+  font-size: 14px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: var(--link);
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+.search-box {
+  margin-bottom: 16px;
+}
+
+#search {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+}
+
+#search-results li {
+  margin-bottom: 8px;
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .page {
+    margin: 32px auto;
+    padding: 0 16px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+/* PAGE NAV */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 48px;
+  font-size: 14px;
+}

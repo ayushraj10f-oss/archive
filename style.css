@@ -89,23 +89,6 @@ a {
 }
 
 /* =========================
-   THEME TOGGLE
-========================= */
-
-#theme-toggle {
-  position: fixed;
-  top: 18px;
-  right: 22px;
-  font-size: 13px;
-  padding: 6px 10px;
-  background: transparent;
-  border: 1px solid #888;
-  cursor: pointer;
-  color: var(--text);
-  z-index: 10;
-}
-
-/* =========================
    POSTERS GRID
 ========================= */
 
@@ -605,14 +588,6 @@ figcaption {
     font-size: 16px;
   }
 
-  /* Theme toggle — smaller, doesn't crowd heading */
-  #theme-toggle {
-    top: 12px;
-    right: 12px;
-    font-size: 11px;
-    padding: 5px 8px;
-  }
-
   /* Posters page */
   .posters-page .page {
     padding-left: 18px;
@@ -730,31 +705,6 @@ figure {
   max-width: 100%;
   overflow: hidden;
 }
-/* NAV BAR — clean, centered, responsive */
-.top-nav {
-  max-width: 760px;
-  margin: 20px auto 40px;
-  padding: 0 20px;
-
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-
-  font-size: 15px;
-  letter-spacing: 0.3px;
-}
-
-.top-nav a {
-  text-decoration: none;
-  color: var(--link);
-  opacity: 0.85;
-}
-
-.top-nav a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
 
 /* Mobile tightening */
 @media (max-width: 600px) {
@@ -828,4 +778,53 @@ figure {
 
 .page-nav .next {
   text-align: right;
+}
+/* =========================
+   TOP BAR (nav + toggle)
+========================= */
+
+.top-bar {
+  max-width: 760px;
+  margin: 20px auto 40px;
+  padding: 0 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+/* NAV */
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  font-size: 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--link);
+  opacity: 0.85;
+}
+
+.nav a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* TOGGLE */
+
+#theme-toggle {
+  font-size: 12px;
+  padding: 5px 9px;
+  background: transparent;
+  border: 1px solid currentColor;
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
 }

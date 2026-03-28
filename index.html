@@ -22,10 +22,16 @@
 <div class="page">
 
   <h1>Archive</h1>
-  <div class="search-box">
-  <input type="text" id="search" placeholder="Search archive...">
+  <div class="search-wrapper">
+  <input
+    id="archive-search"
+    type="search"
+    placeholder="Search archive…"
+    autocomplete="off"
+    oninput="filterArchive(this.value)"
+  >
+  <span id="search-count"></span>
 </div>
-<ul id="search-results"></ul>
 
   <p class="subtitle">
     Essays, reviews, posters and fragments.
@@ -33,7 +39,7 @@
 
   <h2>Essays</h2>
 
-<ul>
+<ul class="archive-list">
 
 <li>
 <a href="essays/essay-001.html">
@@ -149,31 +155,21 @@ Historiography Notes Archive
   };
 </script>
 <script>
-const pages = [
-  { title: "Karmabhumi", url: "/archive/essays/essay-001.html" },
-  { title: "Civilizational Realism", url: "/archive/essays/essay-002.html" },
-  { title: "The Forest and the Knife", url: "/archive/essays/essay-003.html" },
-  { title: "Strategic Blindness", url: "/archive/essays/essay-004.html" },
-  { title: "Jati", url: "/archive/essays/essay-005.html" },
-  { title: "Historiography Notes", url: "/archive/notes/historiography.html" },
-  { title: "Personal Notes", url: "/archive/notes/personal.html" }
-];
+function filterArchive(q) {
+  const items = document.querySelectorAll('.archive-list li');
+  const term = q.trim().toLowerCase();
 
-const input = document.getElementById("search");
-const results = document.getElementById("search-results");
+  let visible = 0;
 
-input.addEventListener("input", () => {
-  const query = input.value.toLowerCase();
-  results.innerHTML = "";
+  items.forEach(li => {
+    const match = !term || li.textContent.toLowerCase().includes(term);
+    li.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
 
-  pages
-    .filter(p => p.title.toLowerCase().includes(query))
-    .forEach(p => {
-      const li = document.createElement("li");
-      li.innerHTML = `<a href="${p.url}">${p.title}</a>`;
-      results.appendChild(li);
-    });
-});
+  const counter = document.getElementById('search-count');
+  counter.textContent = term ? `${visible} results` : '';
+}
 </script>
 </body>
 </html>

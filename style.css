@@ -789,9 +789,8 @@ figure {
   padding: 0 20px;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
 
   gap: 12px;
 }
@@ -827,4 +826,16 @@ figure {
   color: var(--text);
   cursor: pointer;
   white-space: nowrap;
+}
+.nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex: 1;
+}
+.home-page .archive-list li {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin: 12px 0;
 }

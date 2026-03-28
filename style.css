@@ -869,3 +869,36 @@ figure {
     margin-bottom: 10px;
   }
 }
+/* =========================
+   FINAL FIXES — DO NOT MODIFY ABOVE
+========================= */
+
+/* 1. FIX TOGGLE (position + no overlap + no scroll issues) */
+#theme-toggle {
+  position: fixed !important;
+  top: 12px !important;
+  right: 12px !important;
+  font-size: 12px !important;
+  padding: 5px 8px !important;
+  background: var(--bg) !important;
+  border: 1px solid #888 !important;
+  color: var(--text) !important;
+  z-index: 9999 !important;
+}
+
+/* 2. CREATE SPACE SO TOGGLE NEVER OVERLAPS CONTENT */
+body {
+  padding-top: 50px !important;
+}
+
+/* 3. REMOVE RANDOM DIVIDERS */
+.archive-list li {
+  margin: 18px 0 !important;
+  padding-bottom: 0 !important;
+  border: none !important;
+}
+
+/* 4. PREVENT ANY HORIZONTAL BREAKAGE */
+html, body {
+  overflow-x: hidden !important;
+}

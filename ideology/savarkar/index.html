@@ -6,26 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../style.css">
   <link rel="manifest" href="../../manifest.json">
-
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../../sw.js');
-  }
-</script>
 </head>
 
 <body class="ideology-page">
+
 <div class="top-bar">
- <nav class="nav">
-  <a href="/archive/">Home</a>
-  <a href="/archive/#essays">Essays</a>
-  <a href="/archive/#reviews">Reviews</a>
-  <a href="/archive/#notes">Notes</a>
-  <a href="/archive/ideology/">Ideology</a>
-  <a href="/archive/taste/">Taste</a>
-  <a href="/archive/form/">Form</a>
-  <a href="/archive/posters/">Posters</a>
-</nav>
+  <nav class="nav">
+    <a href="/archive/">Home</a>
+    <a href="/archive/#essays">Essays</a>
+    <a href="/archive/#reviews">Reviews</a>
+    <a href="/archive/#notes">Notes</a>
+    <a href="/archive/ideology/">Ideology</a>
+    <a href="/archive/taste/">Taste</a>
+    <a href="/archive/form/">Form</a>
+    <a href="/archive/posters/">Posters</a>
+  </nav>
 
   <button id="theme-toggle">toggle dark mode</button>
 </div>
@@ -35,20 +30,22 @@
   <h1>Speech by Savarkar on Partition</h1>
 
   <p class="subtitle">
-    Reconstructed subtitles from poor quality hindi subtitled print. 
+    Reconstructed subtitles from a poor-quality Hindi-subtitled print.
   </p>
 
-  <p>
-    Source video from: savarkar.org
+  <p class="source">
+    Source video: savarkar.org
   </p>
 
- <iframe 
-  width="100%" 
-  height="500"
-  src="https://www.youtube.com/embed/cxZ2t-358UA"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
+  <!-- Video block (robust fallback instead of broken embed) -->
+  <div class="video-block">
+    <a href="https://youtu.be/cxZ2t-358UA" target="_blank">
+      <img 
+        src="https://img.youtube.com/vi/cxZ2t-358UA/hqdefault.jpg" 
+        alt="Savarkar Speech Thumbnail">
+      <p>Watch on YouTube</p>
+    </a>
+  </div>
 
 </main>
 

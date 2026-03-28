@@ -2,11 +2,10 @@
   "name": "Archive",
   "short_name": "Archive",
   "description": "Essays, reviews, posters and fragments.",
-  "start_url": "/archive/",
-  "scope": "/archive/",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#f6f5f2",
-  "theme_color": "#f6f5f2",
+  "background_color": "#111417",
+  "theme_color": "#111417",
   "orientation": "portrait-primary",
   "icons": [
     {

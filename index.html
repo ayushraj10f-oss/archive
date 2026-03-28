@@ -6,135 +6,92 @@
   <base href="/archive/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json">
 
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/archive/sw.js');
-  }
-</script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/archive/sw.js');
+    }
+  </script>
 </head>
 
 <body class="home-page">
 
 <button id="theme-toggle">toggle dark mode</button>
 
+<nav class="nav">
+  <a href="/archive/">Home</a>
+  <a href="/archive/#essays">Essays</a>
+  <a href="/archive/#reviews">Reviews</a>
+  <a href="/archive/#notes">Notes</a>
+  <a href="/archive/ideology/">Ideology</a>
+  <a href="/archive/taste/">Taste</a>
+  <a href="/archive/form/">Form</a>
+  <a href="/archive/posters/">Posters</a>
+</nav>
+
 <div class="page">
 
   <h1>Archive</h1>
+
   <div class="search-wrapper">
-  <input
-    id="archive-search"
-    type="search"
-    placeholder="Search archive…"
-    autocomplete="off"
-    oninput="filterArchive(this.value)"
-  >
-  <span id="search-count"></span>
-</div>
+    <input
+      id="archive-search"
+      type="search"
+      placeholder="Search archive…"
+      autocomplete="off"
+      oninput="filterArchive(this.value)"
+    >
+    <span id="search-count"></span>
+  </div>
 
   <p class="subtitle">
     Essays, reviews, posters and fragments.
   </p>
 
-  <h2>Essays</h2>
+  <h2 id="essays">Essays</h2>
 
-<ul class="archive-list">
+  <ul class="archive-list">
+    <li><a href="essays/essay-001.html">Karmabhumi: Indra’s Curse, Civilizational Stagnation, and rerum indicarum natura</a></li>
+    <li><a href="essays/essay-002.html">Civilizational Realism and the Failure of Hindu Civic Nationalism</a></li>
+    <li><a href="essays/essay-003.html">The Forest and the Knife</a></li>
+    <li><a href="essays/essay-004.html">Strategic Blindness in Pre-modern India</a></li>
+    <li><a href="essays/essay-005.html">Jāti: What It Is, What It Is Not, and What It Predates</a></li>
+  </ul>
 
-<li>
-<a href="essays/essay-001.html">
-Karmabhumi: Indra’s Curse, Civilizational Stagnation, and rerum indicarum natura
-</a>
-</li>
-
-<li>
-<a href="essays/essay-002.html">
-Civilizational Realism and the Failure of Hindu Civic Nationalism
-</a>
-</li>
-
-<li>
-<a href="essays/essay-003.html">
-The Forest and the Knife
-</a>
-</li>
-
-<li>
-<a href="essays/essay-004.html">
-Strategic Blindness in Pre-modern India
-</a>
-</li>
-<li>
-<a href="essays/essay-005.html">
-Jāti: What It Is, What It Is Not, and What It Predates
-</a>
-</li>
-</ul>
-
-  <h2>Reviews</h2>
-<ul>
-  <li>
-    <a href="reviews/movie-001.html">
-  Gandhi, My Father (2007) - Film Review
-</a>
-  </li>
-  <li>
-    <a href="reviews/movie-002.html">
-      Nine Hours to Rama (1963) - Film Review
-    </a>
-  </li>
-
-</ul>
-
+  <h2 id="reviews">Reviews</h2>
+  <ul class="archive-list">
+    <li><a href="reviews/movie-001.html">Gandhi, My Father (2007) - Film Review</a></li>
+    <li><a href="reviews/movie-002.html">Nine Hours to Rama (1963) - Film Review</a></li>
+  </ul>
 
   <h2>Posters</h2>
   <p>
-    A small selection. 
-    <a href="posters/index.html">
-  View all posters
-</a>
+    A small selection.
+    <a href="posters/index.html">View all posters</a>
+  </p>
 
   <div class="poster-preview">
-    <a href="posters/pdf/poster001.pdf">
-      <img src="posters/images/poster001.jpg" alt="Poster 001">
-    </a>
-    <a href="posters/pdf/poster002.pdf">
-      <img src="posters/images/poster002.jpg" alt="Poster 002">
-    </a>
-    <a href="posters/pdf/poster003.pdf">
-      <img src="posters/images/poster003.jpg" alt="Poster 003">
-    </a>
+    <a href="posters/pdf/poster001.pdf"><img src="posters/images/poster001.jpg"></a>
+    <a href="posters/pdf/poster002.pdf"><img src="posters/images/poster002.jpg"></a>
+    <a href="posters/pdf/poster003.pdf"><img src="posters/images/poster003.jpg"></a>
   </div>
 
-  <h2>Notes and Finds</h2>
-<li>
-<a href="notes/historiography.html" target="_blank">
-Historiography Notes Archive
-</a>
-</li>
-<li><a href="notes/personal.html">Personal Notes</a></li>
+  <h2 id="notes">Notes and Finds</h2>
 
-<details>
-  <summary>Videos</summary>
-
-  <ul>
-    <li>
-      <a href="ideology/index.html">
-        Ideology
-      </a>
-    </li>
-    <li>
-      <a href="taste/index.html">
-        Taste
-      </a>
-    </li>
-    <li>
-      <a href="form/index.html">
-        Form
-      </a>
-    </li>
+  <ul class="archive-list">
+    <li><a href="notes/historiography.html">Historiography Notes Archive</a></li>
+    <li><a href="notes/personal.html">Personal Notes</a></li>
   </ul>
-</details>
+
+  <details>
+    <summary>Videos</summary>
+    <ul>
+      <li><a href="ideology/index.html">Ideology</a></li>
+      <li><a href="taste/index.html">Taste</a></li>
+      <li><a href="form/index.html">Form</a></li>
+    </ul>
+  </details>
 
 </div>
 
@@ -146,6 +103,7 @@ Historiography Notes Archive
   const root = document.documentElement;
   const btn = document.getElementById("theme-toggle");
   const saved = localStorage.getItem("theme");
+
   if (saved) root.setAttribute("data-theme", saved);
 
   btn.onclick = () => {
@@ -154,11 +112,11 @@ Historiography Notes Archive
     localStorage.setItem("theme", next);
   };
 </script>
+
 <script>
 function filterArchive(q) {
   const items = document.querySelectorAll('.archive-list li');
   const term = q.trim().toLowerCase();
-
   let visible = 0;
 
   items.forEach(li => {
@@ -167,9 +125,10 @@ function filterArchive(q) {
     if (match) visible++;
   });
 
-  const counter = document.getElementById('search-count');
-  counter.textContent = term ? `${visible} results` : '';
+  document.getElementById('search-count').textContent =
+    term ? `${visible} results` : '';
 }
 </script>
+
 </body>
 </html>

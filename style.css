@@ -691,3 +691,42 @@ figcaption {
     padding: 14px 18px 0;
   }
 }
+/* MOBILE TYPOGRAPHY FIX */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .page {
+    margin: 32px auto;
+    padding: 0 16px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+/* PREVENT SIDE SCROLL */
+html, body {
+  overflow-x: hidden;
+}
+
+/* FIX LONG TEXT / LINKS */
+p, a, li {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* FORCE IMAGES TO FIT */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* FIX FIGURES */
+figure {
+  max-width: 100%;
+  overflow: hidden;
+}

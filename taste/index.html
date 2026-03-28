@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Taste</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="manifest" href="../manifest.json">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/archive/sw.js');
+  }
+</script>
+</head>
+
+<body class="taste-page">
+
+<button id="theme-toggle">toggle dark mode</button>
+
+<main class="page">
+
+  <h1>Taste</h1>
+
+  <p class="subtitle">
+    Extended, non-argumentative material included for sensibility,
+    atmosphere, and sustained attention.
+  </p>
+
+  <ol>
+    <li>
+      <a href="https://youtu.be/kCus8vFbwGw?si=Sm80bSZmfbJjAAa8" target="_blank" rel="noopener noreferrer">
+        Manga artist Jiro Taniguchi
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/F9NiC6WSjX4?si=dFp0_pYM9cN5TWiL" target="_blank" rel="noopener noreferrer">
+        The Greatest depiction of “The Strongest”
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/S3KZkmTEJDA?si=DleXAuhpGVRLQz-l" target="_blank" rel="noopener noreferrer">
+        Legend of the Galactic Heroes
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/bVpRCySUx3Y?si=-PSM7Gj2as1KD1RC" target="_blank" rel="noopener noreferrer">
+        A Devil with a dream
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/H6DQePdp7Po?si=tcB2Xy8mZvLzq1zK" target="_blank" rel="noopener noreferrer">
+        The Curse of the ordinary
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/t_V-h55jJRY?si=XybT1T_Vnif11hkA" target="_blank" rel="noopener noreferrer">
+        Lawrence of Arabia – Tragedy of the conqueror
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/0yNjUFEuW18?si=hTbbokPEVDQY__9A" target="_blank" rel="noopener noreferrer">
+        The King of Luxury Fashion – Hermès
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/A2dq_7wu0Dw?si=tavbUo2R6ewvBOZW" target="_blank" rel="noopener noreferrer">
+        Searching for Fallen Angels’ lost lens
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/GbXIONSjmkY?si=eCykrP8OWf_X_Hnp" target="_blank" rel="noopener noreferrer">
+        What makes “Tears in the Rain” special
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/g4bIhX09-oU?si=gcK19mMqt1XnCT4S" target="_blank" rel="noopener noreferrer">
+        Indian culture in Berserk
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/JBfv-GfcRiY?si=ZBPJRu2TLdgX2uIF" target="_blank" rel="noopener noreferrer">
+        Patlabor – A mecha not about mecha
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/GAWl3AU_idY?si=IVjKMqf3neF-yYUd" target="_blank" rel="noopener noreferrer">
+        The deepest dive into Chainsaw Man
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/pGagZQPg7jY?si=K8VXLdkDkHwgXfnV" target="_blank" rel="noopener noreferrer">
+        Abandoned France
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/r4aKocDsrZk?si=eaDt5xFXJ3w45RQL" target="_blank" rel="noopener noreferrer">
+        Making sense of Serial Experiments Lain
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/QL_3Qg-SADY?si=O_Fv_sLuEiE2vaRM" target="_blank" rel="noopener noreferrer">
+        The business of war – SOFEX
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/qm0OTfEa4wo?si=D2AnoPwtr-1m-ws_" target="_blank" rel="noopener noreferrer">
+        The Climber
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/5UrsGVt1e-U?si=GxawTfqng_M3Z5GG" target="_blank" rel="noopener noreferrer">
+        Lakshmi Vilas Palace tour
+      </a>
+    </li>
+
+    <li>
+      <a href="https://youtu.be/bBbE4iOm4cs?si=hhzZ_7GJFyWGGnj_" target="_blank" rel="noopener noreferrer">
+        Indus Valley Civilization 3D tour
+      </a>
+    </li>
+  </ol>
+
+</main>
+
+<footer class="site-footer">
+  Unpublished working archive, Dec 2025 – present.
+</footer>
+
+<script>
+  const root = document.documentElement;
+  const btn = document.getElementById("theme-toggle");
+
+  const saved = localStorage.getItem("theme");
+  if (saved) root.setAttribute("data-theme", saved);
+
+  btn.onclick = () => {
+    const next =
+      root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  };
+</script>
+
+</body>
+</html>

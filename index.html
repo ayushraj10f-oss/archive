@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Archive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/archive/sw.js');
+  }
+</script>
+</head>
+
+<body class="home-page">
+
+<button id="theme-toggle">toggle dark mode</button>
+
+<div class="page">
+
+  <h1>Archive</h1>
+
+  <p class="subtitle">
+    Essays, reviews, posters and fragments.
+  </p>
+
+  <h2>Essays</h2>
+
+<ul>
+
+<li>
+<a href="essays/essay-001.html" target="_blank" rel="noopener noreferrer">
+Karmabhumi: Indra’s Curse, Civilizational Stagnation, and rerum indicarum natura
+</a>
+</li>
+
+<li>
+<a href="essays/essay-002.html" target="_blank" rel="noopener noreferrer">
+Civilizational Realism and the Failure of Hindu Civic Nationalism
+</a>
+</li>
+
+<li>
+<a href="essays/essay-003.html" target="_blank" rel="noopener noreferrer">
+The Forest and the Knife
+</a>
+</li>
+
+<li>
+<a href="essays/essay-004.html" target="_blank" rel="noopener noreferrer">
+Strategic Blindness in Pre-modern India
+</a>
+</li>
+<li>
+<a href="essays/essay-005.html" target="_blank" rel="noopener noreferrer">
+Jāti: What It Is, What It Is Not, and What It Predates
+</a>
+</li>
+</ul>
+
+  <h2>Reviews</h2>
+<ul>
+  <li>
+    <a href="reviews/movie-001.html" target="_blank" rel="noopener noreferrer">
+  Gandhi, My Father (2007) - Film Review
+</a>
+  </li>
+  <li>
+    <a href="reviews/movie-002.html" target="_blank" rel="noopener noreferrer">
+      Nine Hours to Rama (1963) - Film Review
+    </a>
+  </li>
+
+</ul>
+
+
+  <h2>Posters</h2>
+  <p>
+    A small selection. 
+    <a href="posters/index.html" target="_blank" rel="noopener noreferrer">
+  View all posters
+</a>
+
+  <div class="poster-preview">
+    <a href="posters/pdf/poster001.pdf">
+      <img src="posters/images/poster001.jpg" alt="Poster 001">
+    </a>
+    <a href="posters/pdf/poster002.pdf">
+      <img src="posters/images/poster002.jpg" alt="Poster 002">
+    </a>
+    <a href="posters/pdf/poster003.pdf">
+      <img src="posters/images/poster003.jpg" alt="Poster 003">
+    </a>
+  </div>
+
+  <h2>Notes and Finds</h2>
+<li>
+<a href="notes/historiography.html" target="_blank">
+Historiography Notes Archive
+</a>
+</li>
+<li><a href="notes/personal.html">Personal Notes</a></li>
+
+<details>
+  <summary>Videos</summary>
+
+  <ul>
+    <li>
+      <a href="ideology/index.html" target="_blank" rel="noopener noreferrer">
+        Ideology
+      </a>
+    </li>
+    <li>
+      <a href="taste/index.html" target="_blank" rel="noopener noreferrer">
+        Taste
+      </a>
+    </li>
+    <li>
+      <a href="form/index.html" target="_blank" rel="noopener noreferrer">
+        Form
+      </a>
+    </li>
+  </ul>
+</details>
+
+</div>
+
+<footer class="site-footer">
+  Unpublished working archive, Dec 2025 – present.
+</footer>
+
+<script>
+  const root = document.documentElement;
+  const btn = document.getElementById("theme-toggle");
+  const saved = localStorage.getItem("theme");
+  if (saved) root.setAttribute("data-theme", saved);
+
+  btn.onclick = () => {
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  };
+</script>
+
+</body>
+</html>

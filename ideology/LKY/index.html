@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Lee Kuan Yew — PAP Rally (1980)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../style.css">
+<link rel="manifest" href="../../manifest.json">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/archive/sw.js');
+  }
+</script>
+</head>
+
+<body class="notes-page">
+
+<button id="theme-toggle">toggle dark mode</button>
+
+<main class="page">
+
+<h1>Lee Kuan Yew — Rally for the PAP (1980)</h1>
+
+<p class="archive-description">
+Speech delivered by Lee Kuan Yew during a People's Action Party rally in 1980, outlining political discipline, governance priorities, and the logic of Singapore’s statecraft.
+</p>
+
+<div class="video-container">
+  <iframe 
+  width="100%" 
+  height="500"
+  src="https://www.youtube.com/embed/WGLBX9qiyiA"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
+</div>
+
+</main>
+
+<footer class="site-footer">
+Unpublished working archive, Dec 2025 – present.
+</footer>
+
+<script>
+const root = document.documentElement;
+const btn = document.getElementById("theme-toggle");
+
+const saved = localStorage.getItem("theme");
+if (saved) root.setAttribute("data-theme", saved);
+
+btn.onclick = () => {
+const next =
+root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+root.setAttribute("data-theme", next);
+localStorage.setItem("theme", next);
+};
+</script>
+
+</body>
+</html>

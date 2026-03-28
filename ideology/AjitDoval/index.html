@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Ajit Doval — Democracy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../style.css">
+<link rel="manifest" href="../../manifest.json">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/archive/sw.js');
+  }
+</script>
+</head>
+
+<body class="notes-page">
+
+<button id="theme-toggle">toggle dark mode</button>
+
+<main class="page">
+
+<h1>Ajit Doval on the problems created by democracy</h1>
+
+<p class="archive-description">
+Excerpt from Ajit Doval’s remarks on governance, delivered on Rashtriya Ekta Diwas.
+</p>
+
+<div class="video-container">
+  <iframe 
+  width="100%" 
+  height="500"
+  src="https://www.youtube.com/embed/coN-NBICSRc"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
+</div>
+
+<p class="archive-description">
+Transcription (excerpt):
+</p>
+
+<blockquote>
+“What has happened is that while democracy has proved to be one of the most effective and enduring systems of governance, it has created its own problems.”
+</blockquote>
+
+<blockquote>
+“It leads to partisan politics. There are divisions. Division is a very strange thing. If there are 100 people and I have a following of 25, I can come to power if I can divide the rest into groups that are each smaller than 20.”
+</blockquote>
+
+<blockquote>
+“It is not an aspiration to make it 51, but an aspiration to divide the rest of the society into as many fragments as possible. That fragmentation is the danger.”
+</blockquote>
+
+<blockquote>
+“In democracies, money plays a role — whether legitimate or illegitimate. Your idealism, vision, thought, and patriotism must have strong support from money.”
+</blockquote>
+
+<blockquote>
+“There is often an eclipsing of national interest by vested interest — not necessarily corruption, but smaller, localised priorities overriding the larger national interest.”
+</blockquote>
+
+<blockquote>
+“We must examine our systems — laws, rules, procedures — and make them more people-friendly. Policies must meet aspirations. Basic needs must be addressed. People must feel secure.”
+</blockquote>
+
+</main>
+
+<footer class="site-footer">
+Unpublished working archive, Dec 2025 – present.
+</footer>
+
+<script>
+const root = document.documentElement;
+const btn = document.getElementById("theme-toggle");
+
+const saved = localStorage.getItem("theme");
+if (saved) root.setAttribute("data-theme", saved);
+
+btn.onclick = () => {
+const next =
+root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+root.setAttribute("data-theme", next);
+localStorage.setItem("theme", next);
+};
+</script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Savarkar — Speech (Reconstruction)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="manifest" href="../../manifest.json">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('../../sw.js');
+  }
+</script>
+</head>
+
+<body class="ideology-page">
+
+<button id="theme-toggle">toggle dark mode</button>
+
+<main class="page">
+
+  <h1>Speech by Savarkar on Partition</h1>
+
+  <p class="subtitle">
+    Reconstructed subtitles from poor quality hindi subtitled print. 
+  </p>
+
+  <p>
+    Source video from: savarkar.org
+  </p>
+
+ <iframe 
+  width="100%" 
+  height="500"
+  src="https://www.youtube.com/embed/cxZ2t-358UA"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
+
+</main>
+
+<footer class="site-footer">
+  Unpublished working archive, Dec 2025 – present.
+</footer>
+
+<script>
+  const root = document.documentElement;
+  const btn = document.getElementById("theme-toggle");
+
+  const saved = localStorage.getItem("theme");
+  if (saved) root.setAttribute("data-theme", saved);
+
+  btn.onclick = () => {
+    const next =
+      root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+  };
+</script>
+
+</body>
+</html>

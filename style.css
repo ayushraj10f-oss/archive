@@ -902,3 +902,32 @@ body {
 html, body {
   overflow-x: hidden !important;
 }
+.side-by-side {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.image-block {
+  flex: 1 1 48%;
+}
+
+.archive-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+figure {
+  margin: 1em 0;
+}
+
+figcaption {
+  font-size: 0.9em;
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+.quote {
+  font-style: italic;
+}
